@@ -1,16 +1,17 @@
+
 #include "main.h"
 
 /**
-* handle_write_char - Prints a string
-* @k: char types.
-* @buffer: Buffer array to handle print
-* @flags:  Calculates flags.
-* @width: get width.
-* @precision: specify precision 
-* @size: specify Size 
-*
-* Return: Number of chars printed.
-*/
+ * handle_write_char - Prints a string
+ * @k: char types.
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates flags.
+ * @width: get width.
+ * @precision: specify precision
+ * @size: specify Size
+ *
+ * Return: Number of chars printed.
+ */
 int handle_write_char(char k, char buffer[],
 int flags, int width, int precision, int size)
 { /* char is stored at left and paddind at buffer's right */
@@ -44,17 +45,17 @@ return (write(1, &buffer[0], 1));
 }
 
 /**
-* write_number - Print string
-* @is_negative: List of arguments
-* @ind: char types.
-* @buffer: Buffer array to handle print
-* @flags:  Calculates flags
-* @width: get width.
-* @precision: specify precision 
-* @size: specify Size 
-*
-* Return: Number of print chars.
-*/
+ * write_number - Print string
+ * @is_negative: List of arguments
+ * @ind: char types.
+ * @buffer: Buffer array to handle print
+ * @flags:  Calculates flags
+ * @width: get width.
+ * @precision: specify precision
+ * @size: specify Size
+ *
+ * Return: Number of print chars.
+ */
 int write_number(int is_negative, int ind, char buffer[],
 int flags, int width, int precision, int size)
 {
@@ -82,7 +83,7 @@ length, padd, extra_ch));
 * @buffer: Buffer
 * @flags: Flags
 * @width: width
-* @prec: specify Precision 
+* @prec: specify Precision
 * @length: Number length
 * @padd: Padding char
 * @extra_c: Extra char
@@ -140,10 +141,10 @@ return (write(1, &buffer[ind], length));
 * @is_negative: Indicates num is negative
 * @ind: Index at which the number starts in the buffer
 * @buffer: Array of chars
-* @flags: Specify Flags 
-* @width: Specify Width 
-* @precision: Specify Precision 
-* @size: Specify Size 
+* @flags: Specify Flags
+* @width: Specify Width
+* @precision: Specify Precision
+* @size: Specify Size
 *
 * Return: Number of written chars.
 */
@@ -198,8 +199,8 @@ return (write(1, &buffer[ind], length));
 * @buffer: Arrays of chars
 * @ind: Index at which number starts in the buffer
 * @length: Length of number
-* @width: Specify Width 
-* @flags: Specify Flags 
+* @width: Specify Width
+* @flags: Specify Flags
 * @padd: Char representing padding
 * @extra_c: Char representing extra char
 * @padd_start: Index at which padding starts

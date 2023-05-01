@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+/* main header file resolution*/
 
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
@@ -13,13 +14,14 @@
 #define F_HASH 8
 #define F_SPACE 16
 
+
 #define S_LONG 2
 #define S_SHORT 1
 
 /**
- * struct fmt - Structure
- * @fmt:  format
- * @fn: The function
+ * struct fmt - Struct op
+ * @fmt: The format.
+ * @fn: The function associated.
  */
 struct fmt
 {
@@ -29,9 +31,10 @@ struct fmt
 
 
 /**
- * typedef struct fmt fmt_t - Struct ops
- * @fmt: The format
- * @fm_t: The function
+ * typedef struct fmt fmt_t - Struct op
+ *
+ * @fmt: The format.
+ * @fm_t: The function associated.
  */
 typedef struct fmt fmt_t;
 
@@ -39,6 +42,8 @@ int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
+
+/* Funtions to print chars and strings */
 int print_char(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_string(va_list types, char buffer[],
@@ -68,16 +73,20 @@ int print_non_printable(va_list types, char buffer[],
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
+
 int get_flags(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
 int get_precision(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
 
+
 int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
+
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
+
 
 int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size);
@@ -99,4 +108,4 @@ int is_digit(char);
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
 
-#endif
+#endif /* MAIN_H */
